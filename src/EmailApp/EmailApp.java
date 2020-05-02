@@ -15,12 +15,7 @@ public class EmailApp {
 
         System.out.println("---------------------------------------------------------------------------------------");
 
-        System.out.println(em1.getName());
-        System.out.println(em1.getDepartment());
-        System.out.println(em1.getEmail());
-        System.out.println(em1.getAlterEmail());
-        System.out.println(em1.getPassword());
-        System.out.println("Mailbox Capacity: "+ em1.getMailCapacity());
+        System.out.println(em1.info());
     }
 
 }
