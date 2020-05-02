@@ -120,4 +120,9 @@ public class Email {
     public String getDepartment() {
         return "Department: " +department;
     }
+
+    public String info(){
+        return "Name:"+ firstName +" "+ lastName+
+                "\nCompany Email: "+ email+ "\nPassword: " + password;
+    }
 }
