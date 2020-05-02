@@ -19,18 +19,18 @@ public class Email {
     public Email(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println(this.firstName + ' '+ this.lastName);
+        //System.out.println(this.firstName + ' '+ this.lastName);
 
         //set Department using method
         this.department = setDepartment();
-        System.out.println("Dept: "+ this.department);
+        //System.out.println("Dept: "+ this.department);
 
         //Set email
         setEmail();
 
         //set random password
         this.password = randomString();
-        System.out.println("password: "+ this.password);
+        //System.out.println("password: "+ this.password);
 
     }
 
@@ -55,7 +55,7 @@ public class Email {
 
 
     private void setEmail() {
-        StringBuilder email = new StringBuilder(firstName.toLowerCase());
+        StringBuilder email = new StringBuilder(firstName.toLowerCase() + ".");
         email.append(lastName.toLowerCase())
                 .append("@");
         if(department == "None"){
