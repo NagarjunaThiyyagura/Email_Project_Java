@@ -3,8 +3,6 @@ package EmailApp;
 //to store all the Objects for the application
 
 
-import com.sun.corba.se.impl.resolver.SplitLocalResolverImpl;
-
 import java.util.Scanner;
 
 public class Email {
@@ -27,13 +25,13 @@ public class Email {
         this.department = setDepartment();
         System.out.println("Dept: "+ this.department);
 
+        //Set email
+        setEmail();
+
         //set random password
         this.password = randomString();
         System.out.println("password: "+ this.password);
 
-        // Generate Email
-        email = firstName.toLowerCase()+"."+lastName.toLowerCase()+
-                "@"+department+"."+companyDomain;
     }
 
     //Ask for the department
@@ -47,10 +45,26 @@ public class Email {
             case "2": return "Development";
             case "3": return "Accounting";
             default:
-                return "";
+                return "None";
         }
 
 
+    }
+
+    //Generate email in firstname.lastname@department.company.domain
+
+
+    private void setEmail() {
+        StringBuilder email = new StringBuilder(firstName.toLowerCase());
+        email.append(lastName.toLowerCase())
+                .append("@");
+        if(department == "None"){
+            email.append(companyDomain);
+        }
+        else{
+            email.append(department).append("."+ companyDomain);
+        }
+        this.email = String.valueOf(email);
     }
 
     //generate random Password
@@ -78,11 +92,9 @@ public class Email {
     }
 
     //Change password
-    public void changePassword(String password){
+    public void setPassword(String password) {
         this.password = password;
     }
-
-
     //get methods
 
     public int getMailCapacity() {
